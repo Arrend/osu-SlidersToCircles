@@ -11,22 +11,12 @@ ResponseHandling=(
 function (self)
   local map
   while not map do
-  --"C:\\Users\\Liam\\AppData\\Local\\osu!\\Songs\\125843 cosMo@BousouP featHatsune Miku - Hatsune Miku no Shoushitsu\\cosMo@BousouP feat.Hatsune Miku - Hatsune Miku no Shoushitsu (val0108) [Extra].osu"
-  --Get file to change
-  --[[
-  io.write("Please enter the name of the folder the map is in\n")
-  local folderName = readResponse()
-  io.write("Please enter the name of the map\n")
-  local mapName = readResponse()
-  ]]
   io.write("Please drag the .osu file in\n")
   local directory = Resources.Utilities.ReadResponse()
   directory = directory:gsub("\\", "/")
   directory = directory:sub(2, -2)
 
   --Checks file is there
-  --if string.lower(string.sub(mapName, -4)) ~= ".osu" then mapName = mapName .. ".osu" end
-  --local directory = songFolderDirectory .. "\\" .. folderName .. "\\" .. mapName
   local map = io.open(directory, "r")
     if not map then
       print("Map not found: incorrect names given, or osu! song folder directory is not correct\n")
